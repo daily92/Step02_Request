@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index.html</title>
+</head>
+<body>
+	<h3>인덱스 페이지 입니다.</h3>
+	
+	<h3>get 방식 테스트</h3>
+	<ul>
+		<!-- 상대 경로 -->
+		<!--  ? => get 방식 요청 파라미터 / name= => 파라미터명= -->
+		<li><a href="test?name=white">TestServlet 테스트</a></li>
+		<!-- 절대 경로 --> 
+		<li><a href="/Step02_Request/test?name=black">TestServlet 테스트2</a></li>
+		
+		<li><a href="test2?num=1&name=pink">테스트2</a></li>
+		
+		<li><a href="users/loginform.html">로그인 폼</a></li>
+	</ul>
+	
+	<h3>post 방식 전송 테스트</h3>
+	<!-- 여기서 요청 body 의 name 이 요청 파라미터명이 됨 \
+		 여기에서는 input 요청의 name 속성의 value 값이 파라미터명	
+			=> request.getParameter("") 에서 "" 안에 쓰면 됨 -->
+	<!-- <form action="요청경로"
+		 지금 여기서는 "insert" 니까 앞에 / 없어서 상대경로, 게다가 최상위 상대경로 -->
+	<form action="insert" method="post">
+		<label for="name">이름</label>
+		<input type="text" name="name" id="name"/>
+		<label for="addr">주소</label>
+		<input type="text" name="addr" id="addr"/>
+		
+		<button type="submit">전송</button>
+	</form>
+</body>
+</html>
